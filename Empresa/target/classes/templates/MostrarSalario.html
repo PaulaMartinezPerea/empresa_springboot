@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Consultar Salario</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+
+<h2>CONSULTAR SALARIO DE UN EMPLEADO</h2>
+
+<form th:action="@{/empresa/sueldo/buscar}" method="get">
+    DNI: <input type="text" name="dni" required>
+    <input type="submit" value="Buscar">
+</form>
+
+<!-- Muestra el resultado solo si existe -->
+<div th:if="${dni != null}">
+
+    <h3>Resultado</h3>
+    <p>DNI: <b th:text="${dni}"></b></p>
+
+    <!-- Si existe sueldo -->
+    <p th:if="${sueldo > 0}">
+        Salario: <b th:text="${sueldo}"></b> euros
+    </p>
+
+    <!-- Si no existe sueldo -->
+    <p th:if="${sueldo == 0}">
+        No se encontró ese empleado.
+    </p>
+
+</div>
+
+<a href="/empresa/" class="btn-volver">Volver</a>
+
+</body>
+</html>
