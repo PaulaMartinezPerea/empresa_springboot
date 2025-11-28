@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Empleados</title>
+    <link rel="stylesheet" href="/src/main/resources/static/css/styles.css">
+</head>
+
+<body>
+<div class="container">
+    <h1>GESTIÓN DE EMPLEADOS</h1>
+
+    <ul class="menu">
+        <li><a th:href="@{/empresa/listar}">Mostrar Empleados</a></li>
+        <li><a th:href="@{/empresa/sueldo}">Mostrar Salario por DNI</a></li>
+        <li><a th:href="@{/empresa/modificar}">Modificar Datos</a></li>
+    </ul>
+</div>
+</body>
+</html>

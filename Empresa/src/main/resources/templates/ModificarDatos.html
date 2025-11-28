@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Modificar Empleado</title>
+    <link rel="stylesheet" href="/src/main/resources/static/css/styles.css">
+</head>
+
+<body>
+
+<h2>MODIFICAR DATOS DE UN EMPLEADO</h2>
+
+<form th:action="@{/empresa/modificar/guardar}" method="post">
+
+    DNI: <input type="text" name="dni" required><br>
+    Nombre: <input type="text" name="nombre" required><br>
+    Sexo (M/F): <input type="text" name="sexo" maxlength="1" required><br>
+    Categoría: <input type="number" name="categoria" required><br>
+    Años trabajados: <input type="number" name="aniosTrabajados" required><br>
+
+    <button type="submit">Guardar cambios</button>
+</form>
+
+<!-- Mensaje si se actualizo correctamente -->
+<p th:if="${mensaje != null}" th:text="${mensaje}"></p>
+
+<a href="/empresa/" class="btn-volver">Volver</a>
+
+</body>
+</html>
